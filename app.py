@@ -1,10 +1,11 @@
 from flask import Flask,jsonify,request,make_response
 from urllib.parse import urlparse
+from dotenv import dotenv_values
 import psycopg2
 import psutil
-import dotenv
+
 app = Flask(__name__)
-config=dotenv.Dotenv("/etc/generic.conf")
+config=dotenv_values("/etc/generic.conf")
 p = urlparse(config['db'])
 pg_connection_dict = {'dbname': p.hostname,'user': p.username,'password': p.password,'port': p.port,'host': p.scheme}
 
