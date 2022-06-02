@@ -5,7 +5,7 @@ import psycopg2
 import psutil
 
 app = Flask(__name__)
-config=dotenv_values("/etc/main.conf")
+config=dotenv_values("/etc/#name.conf")
 p = urlparse(config['db'])
 pg_connection_dict = {'dbname': p.hostname,'user': p.username,'password': p.password,'port': p.port,'host': p.scheme}
 
