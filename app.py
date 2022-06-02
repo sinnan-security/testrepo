@@ -18,7 +18,7 @@ def health():
 		db="False"
 	return make_response(jsonify({
 		'auth_service':{
-			'key','value'
+			'key':'value'
 		}
 	}),200)
 
